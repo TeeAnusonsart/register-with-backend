@@ -21,14 +21,7 @@ const client= new Client({
     database:"postgres"
 });
 
-// client.query(`SELECT * FROM info`,(err,res)=>{
-//     if(err){
-//         console.log(err.message)
-//     } else{
-//         console.log(res.rows)
-//     }
-    
-//     })
+
 client.connect();
 
 
@@ -36,14 +29,6 @@ app.get('/', (req, res) => {
   res.render('register')
 })
 
-// app.get('/register',(req,res)=>{
-//     res.writeHead(200, {'Content-Type': 'text/html'});
-//     res.write('<form action="register" method="post" enctype="multipart/form-data">');
-//     res.write('<input type="file" name="filetoupload"><br>');
-//     res.write('<input type="submit">');
-//     res.write('</form>');
-//     return res.end();
-// })
 
 app.post('/register',(req,res)=>{
     const {fullnames,password,email}=req.body
